@@ -649,15 +649,512 @@
 
 //BC66 反斜线形图案
 
-int main() {
-    int n = 0;
-    while (~scanf("%d", &n)) {
-        int i = 0, j = 0;
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < i; j++)
-                printf(" ");
-            printf("*\n");
-        }
-    }
-    return 0;
-}
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < i; j++)
+//                printf(" ");
+//            printf("*\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//BC67 正斜线形图案
+
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < n ; j++) {
+//                if (i + j == n-1)
+//                    printf("*");
+//                else
+//                    printf(" ");
+//                
+//            }
+//            printf("\n");
+//        }
+//
+//    }
+//    return 0;
+//}
+
+//BC68 X形图案
+
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < n; j++) {
+//                if (i == j || i + j == n - 1)
+//                    printf("*");
+//                else
+//                    printf(" ");
+//            }
+//            printf("\n");
+//
+//        }
+//    }
+//    return 0;
+//}
+
+//BC69 空心正方形图案
+
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < n; j++) {
+//                if (i == 0 || j == 0 || i == n - 1 || j == n - 1)
+//                    printf("* ");
+//                else
+//                    printf("  ");
+//            }
+//            printf("\n");
+//        }
+//
+//    }
+//    return 0;
+//}
+
+//BC70 空心三角形图案
+
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < n; j++) {
+//                if (j == 0 || i == n - 1 || i == j)
+//                    printf("* ");
+//                else
+//                    printf("  ");
+//            }
+//            printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//BC72 平均身高
+
+//int main() {
+//    double sum = 0.0;
+//    double ret = 0.0;
+//    int i = 0;
+//    for (i = 0; i < 5; i++) {
+//        scanf(" %lf", &ret);
+//        sum += ret;
+//    }
+//    printf("%.2lf\n", sum / 5);
+//    return 0;
+//}
+
+//BC74 HTTP状态码
+
+//int main() {
+//    int HTTP = 0;
+//    while (~scanf("%d", &HTTP)) {
+//        switch (HTTP) {
+//        case 200:
+//            puts("OK");
+//            break;
+//        case 202:
+//            puts("Accepted");
+//            break;
+//        case 400:
+//            puts("Bad Request");
+//            break;
+//        case 403:
+//            puts("Forbidden");
+//            break;
+//        case 404:
+//            puts("Not Found");
+//            break;
+//        case 500:
+//            puts("Internal Server Error");
+//            break;
+//        case 502:
+//            puts("Bad Gateway");
+//            break;
+//        }
+//    }
+//    return 0;
+//}
+
+//BC75 数字三角形
+
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < n; j++) {
+//                if (j <= i)
+//                    printf("%d ", j + 1);
+//            }
+//            printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//BC76 公务员面试
+
+//int main() {
+//	int score = 0;
+//	int ret = 0;
+//	while (~scanf("%d", &ret)) {
+//		int i = 0;
+//		int sum = ret;
+//		int max = ret;
+//		int min = ret;
+//		for (i = 0; i < 6; i++) {
+//			scanf("%d", &ret);
+//			sum += ret;
+//			if (ret > max)
+//				max = ret;
+//			if (ret < min)
+//				min = ret;
+//		}
+//		printf("%.2lf\n", (double)((sum - max - min) / 5.0));
+//	}
+//	return 0;
+//}
+
+//BC77 有序序列插入一个数
+
+//int com_int(void* e1, void* e2) {
+//    return (*(int*)e1 - *(int*)e2);
+//}
+//
+//int main() {
+//    int n = 0;
+//    int arr[50] = { 0 };
+//    int new = 0;
+//    int i = 0, j = 0;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        scanf("%d", &arr[i]);
+//    }
+//    scanf("%d", &arr[n]);
+//    qsort(arr, n + 1, 4, com_int);
+//    for (i = 0; i <= n; i++)
+//        printf("%d ", arr[i]);
+//    return 0;
+//}
+
+//BC78 筛选法求素数
+
+//int main() {
+//    int n = 0;
+//    while (~scanf("%d", &n)) {
+//        int i = 0;
+//        int count = 0;
+//        int arr[101] = { 0 };
+//        for (i = 2; i <= n; i++)
+//            arr[i] = i;
+//        for (i = 2; i <= n; i++) {
+//            int j = 0;
+//            if (arr[i] != 0) {
+//                for (j = i + 1; j <= n; j++) {
+//                    if (arr[j] % i == 0 && arr[j] != 0) {
+//                        arr[j] = 0;
+//                        count++;
+//                    }
+//                }
+//            }
+//        }
+//        for (i = 2; i <= n; i++) {
+//            if (arr[i] != 0) {
+//                printf("%d ", arr[i]);
+//            }
+//
+//        }
+//        printf("\n%d\n", count);
+//
+//    }
+//    return 0;
+//}
+
+//BC79 图像相似度
+
+//int main() {
+//	int m = 0, n = 0;
+//	scanf("%d %d\n", &m, &n);
+//	int arr1[100][100] = { 0 };
+//	int arr2[100][100] = { 0 };
+//	int i = 0, j = 0, count = 0;
+//	for (i = 0; i < m; i++) {
+//		for (j = 0; j < n; j++) {
+//			scanf(" %d", &arr1[i][j]);
+//		}
+//	}
+//	for (i = 0; i < m; i++) {
+//		for (j = 0; j < n; j++) {
+//			scanf(" %d", &arr2[i][j]);
+//		}
+//	}
+//	for (i = 0; i < m; i++) {
+//		for (j = 0; j < n; j++) {
+//			if (arr1[i][j] == arr2[i][j]) {
+//				count++;
+//			}
+//		}
+//	}
+//	printf("%.2lf\n", count * 100.0 / (m * n * 1.0));
+//
+//	return 0;
+//}
+
+//BC80 登录验证
+
+//#include <string.h>
+//int main() {
+//    char str1[100];
+//    char str2[100];
+//    while (~scanf("%s %s", &str1, &str2)) {
+//        if (strcmp(str1, "admin") == 0 && strcmp(str2, "admin") == 0)
+//            puts("Login Success!");
+//        else
+//            puts("Login Fail!");
+//
+//    }
+//    return 0;
+//}
+
+//BC85 包含数字9的数
+
+//int main() {
+//    int year = 1;
+//    int count = 0;
+//    while (year <= 2019) {
+//        int q = year / 1000;
+//        int b = year / 100 % 10;
+//        int s = year / 10 % 10;
+//        int g = year % 10;
+//        if (9 == q || 9 == b || 9 == s || 9 == g)
+//            count++;
+//        year++;
+//    }
+//    printf("%d", count);
+//    return 0;
+//}
+
+//BC86 奇偶统计
+
+//int main() {
+//    int n = 0;
+//    scanf("%d", &n);
+//    if (n % 2)
+//        printf("%d %d", n / 2 + 1, n / 2);
+//    else
+//        printf("%d %d", n / 2, n / 2);
+//    return 0;
+//}
+
+//BC87 统计成绩
+//
+//int main() {
+//    int n = 0;
+//    double max = 0.0;
+//    double min = 100.0;
+//    int i = 0;
+//    double sum = 0.0;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        double ret = 0.0;
+//        scanf("%lf", &ret);
+//        if (ret > max)
+//            max = ret;
+//        if (ret < min)
+//            min = ret;
+//        sum += ret;
+//    }
+//    printf("%.2lf %.2lf %.2lf", max, min, sum / n);
+//
+//    return 0;
+//}
+
+//BC89 密码验证
+
+//int main() {
+//    char ch1[100];
+//    char ch2[100];
+//    scanf("%s %s", &ch1, &ch2);
+//    if (strcmp(ch1, ch2) == 0)
+//        printf("same");
+//    else
+//        printf("different");
+//    return 0;
+//}
+
+//BC90 矩阵计算
+
+//int main() {
+//    int arr[10][10] = { 0 };
+//    int n = 0, m = 0;
+//    int i = 0, j = 0;
+//    int sum = 0;
+//    scanf("%d %d", &n, &m);
+//    for (i = 0; i < n; i++) {
+//        for (j = 0; j < m; j++) {
+//            scanf(" %d", &arr[i][j]);
+//            if (arr[i][j] > 0)
+//                sum += arr[i][j];
+//        }
+//    }
+//    printf("%d", sum);
+//    return 0;
+//}
+
+//BC92 逆序输出
+
+//int main() {
+//    int arr[10] = { 0 };
+//    int i = 0;
+//    for (i = 0; i < 10; i++)
+//        scanf("%d", &arr[i]);
+//    for (i = 0; i < 10; i++)
+//        printf("%d ", arr[9 - i]);
+//    return 0;
+//}
+
+//BC93 统计数据正负个数
+
+//int main() {
+//    int arr[10] = { 0 };
+//    int i = 0;
+//    int pos = 0;
+//    int neg = 0;
+//    for (i = 0; i < 10; i++) {
+//        scanf("%d", &arr[i]);
+//        if (arr[i] > 0)
+//            pos++;
+//        if (arr[i] < 0)
+//            neg++;
+//    }
+//    printf("positive:%d\n", pos);
+//    printf("negative:%d\n", neg);
+//
+//    return 0;
+//}
+
+//BC94 N个数之和
+
+//int main() {
+//    int n = 0;
+//    int sum = 0;
+//    int i = 0;
+//    int ret = 0;
+//
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        scanf(" %d", &ret);
+//        sum += ret;
+//    }
+//    printf("%d", sum);
+//    return 0;
+//}
+
+//BC95 最高分与最低分之差
+
+//int main() {
+//    int n = 0;
+//    int i = 0;
+//    int max = 0;
+//    int min = 100;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        int tmp = 0;
+//        scanf("%d", &tmp);
+//        if (tmp > max)
+//            max = tmp;
+//        if (tmp < min)
+//            min = tmp;
+//    }
+//    printf("%d", max - min);
+//    return 0;
+//}
+
+//BC96 有序序列判断
+
+//int main() {
+//    int n = 0;
+//    int arr[50] = { 0 };
+//    int i = 0;
+//    int flag = 1;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        scanf(" %d", &arr[i]);
+//    }
+//
+//    if (arr[n - 1] - arr[0] > 0) {
+//        for (i = 0; i < n - 1; i++) {
+//            if (arr[i + 1] - arr[i] < 0) {
+//                flag = 0;
+//                break;
+//            }
+//        }
+//    }
+//    else if (arr[n - 1] - arr[0] < 0) {
+//        for (i = 0; i < n - 1; i++) {
+//            if (arr[i + 1] - arr[i] > 0) {
+//                flag = 0;
+//                break;
+//            }
+//        }
+//    }
+//    else {
+//        for (i = 0; i < n; i++) {
+//            if (arr[i] != arr[0]) {
+//                flag = 0;
+//                break;
+//            }
+//        }
+//    }
+//    if (flag)
+//        printf("sorted");
+//    else
+//        printf("unsorted");
+//    return 0;
+//}
+
+//BC98 序列中删除指定数字
+
+//int main() {
+//    int n = 0;
+//    int arr[50] = { 0 };
+//    int i = 0;
+//    int del = 0;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        scanf(" %d", &arr[i]);
+//    }
+//    scanf(" %d", &del);
+//    int flag = 0;
+//    do {
+//        flag = 0;
+//        for (i = 0; i < n; i++) {
+//            if (arr[i] == del) {
+//                flag = 1;
+//                int j = 0;
+//                for (j = i; j < n - 1; j++) {
+//                    arr[j] = arr[j + 1];
+//                }
+//                n--;
+//            }
+//        }
+//    } while (flag);
+//    for (i = 0; i < n; i++)
+//        printf("%d ", arr[i]);
+//    return 0;
+//}
+
+//
