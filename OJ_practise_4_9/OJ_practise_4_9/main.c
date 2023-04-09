@@ -536,23 +536,173 @@
 //	return 0;
 //}
 
-//BC130 小乐乐查找数字
+////BC130 小乐乐查找数字
+//
+//int main() {
+//    int n = 0;
+//    int arr[100] = { 0 };
+//    int i = 0;
+//    int x = 0;
+//    int count = 0;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++) {
+//        scanf(" %d", &arr[i]);
+//    }
+//    scanf("%d", &x);
+//    for (i = 0; i < n; i++) {
+//        if (arr[i] == x)
+//            count++;
+//    }
+//    printf("%d", count);
+//    return 0;
+//}
+
+//BC131 KiKi学程序设计基础
+
+//int main() {
+//    printf("printf(\"Hello world!\\n\");");
+//    printf("\n");
+//    printf("cout << \"Hello world!\" << endl;");
+//    return 0;
+//}
+
+//BC135 KiKi求质数个数
+
+//#include <math.h>
+//
+//int main() {
+//    int i = 0;
+//    int count = 0;
+//    for (i = 100; i < 1000; i++) {
+//        int j = 0;
+//        for (j = 2; j <= sqrt(i); j++) {
+//            if (i % j == 0)
+//                break;
+//        }
+//        if (j > sqrt(i))
+//            count++;
+//    }
+//    printf("%d", count);
+//    return 0;
+//}
+
+//BC136 KiKi去重整数并排序
+
+//int main() {
+//	int n = 0;
+//	int i = 0;
+//	int arr[1001] = { 0 };
+//	int tmp = 0;
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++) {
+//		scanf(" %d", &tmp);
+//		arr[tmp] = tmp;
+//	}
+//	for (i = 1; i <= 1000; i++) {
+//		if (arr[i] != 0)
+//			printf("%d ", arr[i]);
+//	}
+//
+//	return 0;
+//}
+//#include <stdlib.h>
+//
+//int comp(const void* e1, const void* e2) {
+//	return *(int*)e1 - *(int*)e2;
+//}
+//
+//int main() {
+//	int n = 0;
+//	int i = 0;
+//	int k = 0;
+//	int ret = 0;
+//	int arr[1000] = { 0 };
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++) {
+//		scanf(" %d", &ret);
+//		int j = 0;
+//		for (j = 0; j < i; j++) {
+//			if (arr[j] == ret)
+//				break;
+//		}
+//		if (i == j)
+//			arr[k++] = ret;
+//	}
+//	qsort(arr, k, 4, comp);
+//	for (i = 0; i < k; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//BC138 KiKi学结构体和指针
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node {//链表结构体
+	int data;
+	struct Node* next;
+};
 
 int main() {
-    int n = 0;
-    int arr[100] = { 0 };
-    int i = 0;
-    int x = 0;
-    int count = 0;
-    scanf("%d", &n);
-    for (i = 0; i < n; i++) {
-        scanf(" %d", &arr[i]);
-    }
-    scanf("%d", &x);
-    for (i = 0; i < n; i++) {
-        if (arr[i] == x)
-            count++;
-    }
-    printf("%d", count);
-    return 0;
+	int n = 0;
+	int i = 0;
+	struct Node* list = NULL;//指向第一个链表
+	struct Node* tail = NULL;//指向最后一个链表
+
+	scanf("%d", &n);
+	for (i = 0; i < n; i++) {
+		int data = 0;
+		struct Node* pn = (struct Node*)malloc(sizeof(struct Node));//创建一个链表结构体
+		scanf(" %d", &data);
+		pn->data = data;//该结构体放输入的数据
+		pn->next = NULL;//链表结构体的指针初始化为空指针
+
+		if (list == NULL) {//如果list还没有指向
+			list = pn;//list指向创建的第一个链表结构体
+			tail = list;//tail也一样
+		}
+		else {//如果list有指向了
+			tail->next = pn;//上一个链表的指针 指向 新创建的结构体
+			tail = pn;//tail指向最后一个链表
+		}
+	}//创建完成
+	int del = 0;
+	scanf("%d", &del);//输入要删除的数字
+	struct Node* cur = list;//当前链表
+	struct Node* prev = NULL;//前一个链表
+	while (cur) {
+		if (cur->data == del) {
+			struct Node* pd = cur;//记住这个要删除数据的地址，用来free
+			if (cur == list) {//是第一个元素
+				list = list->next;
+				cur = cur->next;
+			}
+			else {//不是第一个元素
+				prev->next = cur->next;
+				cur = cur->next;
+			}
+			free(pd);//记得释放
+			pd = NULL;
+			n--;
+		}
+		else {
+			prev = cur;
+			cur = cur->next;
+		}
+	}
+	printf("%d\n", n);//还剩多少个数
+	cur = list;//cur指向第一个第一个结构体
+	while(cur){
+		printf("%d ", cur->data);
+		cur = cur->next;
+	}
+	cur = list;
+	while (cur) {//释放
+		struct Node* pd = cur;//记住当前链表
+		cur = cur->next;
+		free(pd);
+	}
+	return 0;
 }
